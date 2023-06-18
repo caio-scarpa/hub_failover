@@ -32,11 +32,11 @@ The script uses the Python requests library to make API requests and the Python 
 The script is designed to run indefinitely and check the status of the primary MX every 20 seconds.
 
 * If Primary is up:
-![up](images/up.png)
+  * ![up](images/up.png)
 
 
 * If Primary is down:
-![down](images/down.png)
+  * ![down](images/down.png)
 
 ## Team Members
 * Caio Scarpa - SE | cscarpa@cisco.com
