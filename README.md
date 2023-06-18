@@ -9,18 +9,27 @@ The script uses the Meraki Dashboard API to interact with these devices. The API
 
 1. Clone this repository
 
-        $ git clone [add_link_to_repository_here]
+        $ git clone https://github.com/caio-scarpa/hub_failover.git
+        $ cd hub_failover.git
 
-2. Substitute the key values inside the hub_failover.py file
+3. Substitute the key values inside the hub_failover.py file
 
-3. Make sure to have python3 installed
+        $ nano hub_failover.py
+
+4. Make sure to have python3 installed
 
         $ sudo apt-get install python3
 
-4. Run it
+5. Run it
 
         $ python3 hub_failover.py
 
+
+## Python Script
+The Python script contains two main functions: is_host_reachable, which checks if the primary MX is reachable by pinging its public IP address, and set_vpn_config, which sets the VPN configuration for a network.
+In the main loop, the script continuously checks if the primary MX is reachable. If it's not, the script sets the VPN configuration for each branch to use the backup MX as their VPN hub. If the primary MX is reachable, the script sets the VPN configuration for each branch to use the primary MX as their VPN hub.
+The script uses the Python requests library to make API requests and the Python logging library to log information and error messages. It also uses the Python os library to execute the ping command.
+The script is designed to run indefinitely and check the status of the primary MX every 20 seconds.
 
 * If Primary is up:
 ![up](images/up.png)
@@ -28,12 +37,6 @@ The script uses the Meraki Dashboard API to interact with these devices. The API
 
 * If Primary is down:
 ![down](images/down.png)
-
-## Python Script
-The Python script contains two main functions: is_host_reachable, which checks if the primary MX is reachable by pinging its public IP address, and set_vpn_config, which sets the VPN configuration for a network.
-In the main loop, the script continuously checks if the primary MX is reachable. If it's not, the script sets the VPN configuration for each branch to use the backup MX as their VPN hub. If the primary MX is reachable, the script sets the VPN configuration for each branch to use the primary MX as their VPN hub.
-The script uses the Python requests library to make API requests and the Python logging library to log information and error messages. It also uses the Python os library to execute the ping command.
-The script is designed to run indefinitely and check the status of the primary MX every 20 seconds.
 
 ## Team Members
 * Caio Scarpa - SE | cscarpa@cisco.com
