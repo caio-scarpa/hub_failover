@@ -49,7 +49,7 @@ while True:
         if not primary_reachable:
             logging.info("Primary MX is down, switching to backup MX")
             vpn_config = {
-                "mode": "hub",
+                "mode": "spoke",
                 "hubs": [
                     {"hubId": mx_backup["network_id"], "useVpn": True}
                 ]
