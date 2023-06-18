@@ -22,7 +22,7 @@ The script uses the Meraki Dashboard API to interact with these devices. The API
         $ python3 hub_failover.py
 
 
-*If Primary is up:
+* If Primary is up:
 ![up](images/up.png)
 
 
