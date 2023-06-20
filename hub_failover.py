@@ -25,7 +25,7 @@ headers = {
 
 # This function checks if a host (IP) is reachable
 def is_host_reachable(ip):
-    response = os.system("ping -c 5 " + ip)
+    response = os.system("ping -c 6 " + ip)
     # The ping command returns 0 if the host is reachable
     if response == 0:
         return True
@@ -59,7 +59,7 @@ while True:
         else:
             logging.info("Primary MX is active")
             vpn_config = {
-                "mode": "hub",
+                "mode": "spoke",
                 "hubs": [
                     {"hubId": mx_primary["network_id"], "useVpn": True}
                 ]
